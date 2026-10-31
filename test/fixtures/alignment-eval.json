@@ -1,0 +1,73 @@
+{
+  "slides": [
+    {
+      "id": "slide-cpu",
+      "slideNumber": 1,
+      "title": "Round Robin CPU scheduling",
+      "text": "Round Robin scheduling allocates a fixed time quantum to each ready process. An unfinished process returns to the ready queue when its time slice expires."
+    },
+    {
+      "id": "slide-db",
+      "slideNumber": 2,
+      "title": "Relational database joins",
+      "text": "A relational join combines records from different tables by matching related columns or key values."
+    },
+    {
+      "id": "slide-js",
+      "slideNumber": 3,
+      "title": "JavaScript promises",
+      "text": "A promise represents the eventual completion or failure of asynchronous work. Fulfillment and rejection handlers respond to the result."
+    }
+  ],
+  "segments": [
+    {
+      "id": "cpu-1",
+      "startTime": 0,
+      "endTime": 8,
+      "text": "Each runnable task gets a small fixed interval of processor time before the scheduler moves on to another task.",
+      "expectedSlideId": "slide-cpu"
+    },
+    {
+      "id": "cpu-2",
+      "startTime": 8,
+      "endTime": 16,
+      "text": "When a task has not finished after its slice, it is placed back in the queue to wait for another turn.",
+      "expectedSlideId": "slide-cpu"
+    },
+    {
+      "id": "db-1",
+      "startTime": 16,
+      "endTime": 24,
+      "text": "Records from two separate relations can be brought together through values in their corresponding fields.",
+      "expectedSlideId": "slide-db"
+    },
+    {
+      "id": "db-2",
+      "startTime": 24,
+      "endTime": 32,
+      "text": "The combined result includes rows whose linking attributes have the same value.",
+      "expectedSlideId": "slide-db"
+    },
+    {
+      "id": "js-1",
+      "startTime": 32,
+      "endTime": 40,
+      "text": "This object stands for an operation whose outcome will become available later, either successfully or unsuccessfully.",
+      "expectedSlideId": "slide-js"
+    },
+    {
+      "id": "js-2",
+      "startTime": 40,
+      "endTime": 48,
+      "text": "Callbacks can handle the value when the asynchronous task succeeds or handle the reason when it fails.",
+      "expectedSlideId": "slide-js"
+    },
+    {
+      "id": "off-topic",
+      "startTime": 48,
+      "endTime": 56,
+      "text": "The campus auditorium will be closed on Friday for maintenance work.",
+      "expectedSlideId": null
+    }
+  ]
+}

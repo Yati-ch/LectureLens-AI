@@ -1,0 +1,22 @@
+services:
+  lecturelens:
+    build: .
+    image: lecturelens-ai:local
+    container_name: lecturelens-ai
+    restart: unless-stopped
+    init: true
+    ports:
+      - "${HOST_PORT:-3000}:3000"
+    env_file:
+      - .env
+    environment:
+      NODE_ENV: ${NODE_ENV:-development}
+      PORT: "3000"
+      DATA_DIR: /app/data
+    volumes:
+      - lecturelens_data:/app/data
+    security_opt:
+      - no-new-privileges:true
+
+volumes:
+  lecturelens_data:

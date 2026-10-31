@@ -1,0 +1,29 @@
+# Render Blueprint: New > Blueprint > select this repository.
+# Persistent disks require a paid instance type. Without a disk the app still works,
+# but accounts and uploads are reset on every deploy (starter lessons and the judge demo are re-created automatically).
+services:
+  - type: web
+    name: lecturelens-ai
+    runtime: docker
+    plan: starter
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: TRUST_PROXY        # required behind Render's proxy so rate limits are per visitor, not global
+        value: "true"
+      - key: DEMO_ENABLED
+        value: "true"
+      - key: DATA_DIR
+        value: /app/data
+      - key: AI_API_KEY          # optional: AI explanations and quizzes
+        sync: false
+      - key: EMBEDDINGS_API_KEY  # optional: semantic transcript alignment
+        sync: false
+      - key: TRANSCRIPTION_API_KEY  # optional: speech-to-text for audio/video uploads
+        sync: false
+    disk:
+      name: lecturelens-data
+      mountPath: /app/data
+      sizeGB: 1

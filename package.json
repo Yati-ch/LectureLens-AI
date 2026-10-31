@@ -1,0 +1,16 @@
+{
+  "name": "lecturelens",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.13"
+  },
+  "scripts": {
+    "start": "node --env-file-if-exists=.env server.mjs",
+    "test": "node --test \"test/*.test.mjs\"",
+    "check": "node scripts/check.mjs",
+    "smoke": "node scripts/smoke-test.mjs",
+    "evaluate:alignment": "node --env-file-if-exists=.env scripts/evaluate-alignment.mjs"
+  }
+}

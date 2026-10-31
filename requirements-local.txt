@@ -1,0 +1,4 @@
+# Optional local, no-API speech-to-text engine for Windows/macOS/Linux.
+# Python 3.9+; on an 8 GB laptop use the base model, CPU and int8 quantization.
+faster-whisper>=1.1,<2
+Pillow>=10,<13

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"><meta name="theme-color" content="#090d20"><title>LectureLens AI — Your Learning Space</title>
+<script>try{var d=document.documentElement,t=localStorage.getItem("ll_theme");if(!t)t="light";d.dataset.theme=t;if(sessionStorage.getItem("ll_i"))d.dataset.intro="skip";else sessionStorage.setItem("ll_i","1")}catch(e){document.documentElement.dataset.theme="dark"}</script>
+<link rel="stylesheet" href="/styles.css"></head><body>
+
+<div id="intro" aria-label="LectureLens AI loading" role="status"><div class="ib"><svg class="ilogo" viewBox="0 0 80 80" aria-hidden="true"><circle class="r1" cx="40" cy="40" r="27"/><circle class="r2" cx="40" cy="40" r="8"/><path d="M40 5v9M40 66v9M5 40h9M66 40h9" stroke="var(--blue)" stroke-width="2" stroke-linecap="round" opacity=".7"/></svg><div class="iw">LectureLens AI <span style="color:var(--vio)">AI</span></div><div class="it">Your lectures. Understood. Organized. Remembered.</div><div class="ibar" aria-hidden="true"><i></i></div></div></div>
+<div class="app"><nav aria-label="Main"><div class="brand"><i><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="2.6" fill="currentColor" stroke="none"/></svg></i><div><b>Lecture<span>Lens</span></b><small>Every lecture. One workspace.</small></div></div><div id="nav"></div><div class="me"><span id="uname">Student</span><small>Local workspace</small></div></nav><main id="m"></main></div>
+<div class="toast" id="t" role="status" hidden></div>
+<section class="auth-shell" id="authShell" aria-label="LectureLens AI account" style="display:none">
+  <div class="auth-copy">
+    <div class="auth-brand"><span class="auth-mark" aria-hidden="true">◉</span> Lecture<span>Lens AI</span></div>
+    <h1>Study smarter.<br><em>Remember more.</em></h1>
+    <p class="auth-intro">Clear notes, quick quizzes, and focused revision — all in one place.</p>
+    <div class="auth-benefits" aria-label="Key features"><div><span>✦</span><b>Understand</b></div><div><span>⌁</span><b>Practice</b></div><div><span>↗</span><b>Improve</b></div></div>
+    <div class="auth-orbit-art" aria-hidden="true"><div class="auth-orbit auth-orbit-a"></div><div class="auth-orbit auth-orbit-b"></div><div class="auth-orbit-core"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="15"></circle><circle cx="24" cy="24" r="5"></circle><path d="M24 2v7M24 39v7M2 24h7M39 24h7"></path></svg></div><i class="auth-orbit-dot"></i></div>
+  </div>
+  <form class="auth-card" id="authForm"><div class="auth-card-mark" aria-hidden="true">◉</div><h2 id="authTitle">Welcome back</h2><p class="auth-muted" id="authSubtitle">Log in to pick up where you left off.</p><div id="nameWrap" hidden><label for="authName">Full name</label><input id="authName" name="name" autocomplete="name" maxlength="80" placeholder="Your name"></div><label for="authEmail">Email address</label><input id="authEmail" name="email" type="email" autocomplete="email" required maxlength="254" placeholder="you@example.com"><div id="recoveryWrap" hidden><label for="authRecovery">Recovery code</label><input id="authRecovery" name="recoveryCode" autocomplete="off" autocapitalize="characters" spellcheck="false" maxlength="24" placeholder="XXXX-XXXX-XXXX-XXXX"></div><label for="authPassword">Password</label><div class="auth-password-wrap"><input id="authPassword" name="password" type="password" autocomplete="current-password" required minlength="8" maxlength="200" placeholder="Enter your password"><button class="auth-password-toggle" id="passwordToggle" type="button" aria-label="Show password" aria-pressed="false" title="Show password"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg></button></div><button class="auth-forgot" id="authForgot" type="button">Forgot password?</button><button class="auth-submit" id="authSubmit" type="submit">Log in <span aria-hidden="true">→</span></button>
+    <div class="auth-error" id="authError" role="alert"></div>
+    <div class="auth-demo-divider"><span>OR EXPLORE INSTANTLY</span></div>
+    <button class="auth-demo-button" id="authDemoButton" type="button"><span class="auth-demo-icon">✦</span><span><b>Try the judge demo</b><small>Open a preloaded workspace · No signup needed</small></span><span class="auth-demo-arrow" aria-hidden="true">↗</span></button>
+    <p class="auth-demo-caption">Includes curated lessons and clearly labelled illustrative quiz activity.</p>
+    <button class="auth-switch" id="authSwitch" type="button">New to LectureLens AI? <b>Create an account</b></button></form>
+
+  <div class="auth-card auth-recovery" id="recoveryPanel" hidden role="alertdialog" aria-labelledby="rcTitle" aria-describedby="rcText">
+    <div class="auth-card-mark" aria-hidden="true">✦</div>
+    <h2 id="rcTitle">Save your recovery code</h2>
+    <p class="auth-muted" id="rcText">If you ever forget your password, this code is the only way to reset it. It is shown once and cannot be recovered later.</p>
+    <output class="rc-code" id="rcCode" aria-live="polite"></output>
+    <div class="rc-actions"><button type="button" class="rc-btn" id="rcCopy">Copy</button><button type="button" class="rc-btn" id="rcDownload">Download .txt</button></div>
+    <label class="rc-confirm"><input type="checkbox" id="rcConfirm"> I have saved my recovery code somewhere safe</label>
+    <button class="auth-submit" id="rcContinue" type="button" disabled>Continue <span aria-hidden="true">→</span></button>
+  </div>
+</section>
+<script type="module" src="/auth.mjs"></script>
+<script type="module" src="/app.mjs"></script><script type="module" src="/tour.mjs"></script><script>window.addEventListener("load",()=>{const intro=document.getElementById("intro");if(intro){window.setTimeout(()=>intro.remove(),3400)}},{once:true});</script></body></html>
